@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :books do
     resources :comments
   end
+  resources :authors
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :books do
