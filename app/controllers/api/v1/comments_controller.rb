@@ -5,7 +5,7 @@ class Api::V1::CommentsController < ApplicationController
   end
   def destroy
     @book = Book.find(params[:book_id])
-    @comment = @book.comment.find(params[:id])
+    @comment = @book.comments.find(params[:id])
     @comment.destroy
   end
   private
