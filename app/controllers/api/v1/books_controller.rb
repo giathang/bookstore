@@ -1,5 +1,6 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:show, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, :only => :create
   #/api/v1/books get
   def index
     @books = Book.all
