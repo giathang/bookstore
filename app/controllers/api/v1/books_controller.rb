@@ -14,7 +14,7 @@ class Api::V1::BooksController < ApplicationController
   end
   #/api/v1/books/:id put
   def update
-    @book = Book.update(book_params)
+    @book.update(book_params)
   end
   #/api/v1/books/:id delete
   def destroy
