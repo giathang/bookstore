@@ -3,4 +3,8 @@
   <strong>Name:</strong>
   <%= @author.name %>
 </p>
+   <% @author.book.each do |book| %>
+        <%= book.title %>
+
+    <% end %>
 <%= link_to 'Back', authors_path %>

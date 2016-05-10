@@ -1,6 +1,5 @@
 class Api::V1::AuthorsController < ApplicationController
   before_action :find_author, only: [:show, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, only: :create
 
   def index
     @authors = Author.all
@@ -14,11 +13,15 @@ class Api::V1::AuthorsController < ApplicationController
   end
 
   def update
-    @author.update(author_params)
+    unless @author.nil?
+      @author.update(author_params)
+    end
   end
 
   def destroy
-    @author.destroy
+    unless @author.nil?
+      @author.destroy
+    end
   end
 
   private
@@ -28,6 +31,6 @@ class Api::V1::AuthorsController < ApplicationController
   end
 
   def find_author
-    @author= Author.find(params[:id])
+    @author= Author.find_by(id: params[:id])
   end
 end

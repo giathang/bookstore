@@ -1,6 +1,5 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:show, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, only: :create
 
   # GET /api/v1/books
   def index
@@ -9,6 +8,9 @@ class Api::V1::BooksController < ApplicationController
 
   # GET /api/v1/books/:id
   def show
+    unless @book.nil?
+      @book
+    end
   end
 
   # POST/api/v1/books
@@ -18,7 +20,9 @@ class Api::V1::BooksController < ApplicationController
 
   # PUT /api/v1/books/:id
   def update
-    @book.update(book_params)
+    unless @book.nil?
+      @book.update(book_params)
+      end
   end
 
   # DELETE/api/v1/books/:id
@@ -33,6 +37,6 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def find_book
-    @book = Book.find(params[:id])
+    @book = Book.find_by(id: params[:id])
   end
 end
