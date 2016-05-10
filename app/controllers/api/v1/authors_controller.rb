@@ -28,6 +28,6 @@ class Api::V1::AuthorsController < ApplicationController
   end
 
   def find_author
-    @book = Author.find(params[:id])
+    @author= Author.find(params[:id])
   end
 end
