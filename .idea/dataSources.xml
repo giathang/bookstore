@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2674964032">
-    <data-source source="LOCAL" name="Rails bookstore: development" uuid="c718ec55-385a-4b9a-911c-c9ed7a9259e8">
+  <component name="DataSourceManagerImpl" format="xml" hash="3798527333">
+    <data-source source="LOCAL" name="SQLite -" uuid="86ebd527-3c15-4579-96dd-4a42408fa9c0">
       <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
