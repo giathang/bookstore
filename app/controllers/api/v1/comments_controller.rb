@@ -8,8 +8,10 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @book.comments.find(params[:id])
-    @comment.destroy
+    unless @book.nil?
+      @comment = @book.comments.find(params[:id])
+      @comment.destroy
+    end
   end
   private
 

@@ -1,15 +1,17 @@
 class CommentsController < ApplicationController
-
 	before_action :find_book , only: [:create, :destroy]
 
 	def create
-		@comment = @book.comments.create(comment_params)
+			@comment = @book.comments.create(comment_params)
+		redirect_to book_path(@book)
 	end
 
 	def destroy
-		@comment = @book.comments.find(params[:id])
-		@comment.destroy
+			@comment = @book.comments.find(params[:id])
+			@comment.destroy
+		redirect_to book_path(@book)
 	end
+
 	private
 
 	def find_book
