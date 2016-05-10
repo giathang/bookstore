@@ -3,4 +3,7 @@ json.books @books do |book|
   json.comments book.comments do |comment|
     json.(comment, :commenter, :body)
   end
+  json.authors book.authors do |author|
+    json.(author, :name)
+  end
 end
