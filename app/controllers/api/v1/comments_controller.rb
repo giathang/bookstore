@@ -1,14 +1,21 @@
 class Api::V1::CommentsController < ApplicationController
+  before_action :find_book , only: [:create, :destroy]
+
   def create
-    @book = Book.find(params[:book_id])
     @comment = @book.comments.create(comment_params)
   end
+
   def destroy
-    @book = Book.find(params[:book_id])
     @comment = @book.comments.find(params[:id])
     @comment.destroy
   end
+
   private
+
+  def find_book
+    @book = Book.find(params[:book_id])
+  end
+
   def comment_params
     params.require(:comment).permit(:commenter,:body)
   end

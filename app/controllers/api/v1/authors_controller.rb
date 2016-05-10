@@ -1,6 +1,6 @@
 class Api::V1::AuthorsController < ApplicationController
   before_action :find_author, only: [:show, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_filter :verify_authenticity_token, only: :create
 
   def index
     @authors = Author.all

@@ -1,6 +1,6 @@
 json.authors @authors do |author|
-  json.(author,:id,:name)
-  json.books author.book do|book|
-      json.(book,:id,:title)
-    end
+  json.extract! author, :name
+  json.books author.book do |book|
+      json.extract! book,:id,:title
+  end
 end

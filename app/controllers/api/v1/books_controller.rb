@@ -1,22 +1,27 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:show, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, :only => :create
-  #/api/v1/books get
+  skip_before_filter :verify_authenticity_token, only: :create
+
+  # GET /api/v1/books
   def index
     @books = Book.all
   end
-  #/api/v1/books/:id get
+
+  # GET /api/v1/books/:id
   def show
   end
-  #/api/v1/books post
+
+  # POST/api/v1/books
   def create
     @book = Book.create(book_params)
   end
-  #/api/v1/books/:id put
+
+  # PUT /api/v1/books/:id
   def update
     @book.update(book_params)
   end
-  #/api/v1/books/:id delete
+
+  # DELETE/api/v1/books/:id
   def destroy
     @book.destroy
   end

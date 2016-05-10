@@ -1,9 +1,9 @@
 json.books @books do |book|
-  json.(book, :isbn, :title, :des)
+  json.extract! book, :isbn, :title, :des
   json.comments book.comments do |comment|
-    json.(comment, :commenter, :body)
+    json.extract! comment, :commenter, :body
   end
   json.authors book.authors do |author|
-    json.(author, :name)
+    json.extract! author, :name
   end
 end
