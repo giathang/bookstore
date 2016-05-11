@@ -9,7 +9,7 @@ class Api::V1::CommentsController < ApplicationController
 
   def destroy
     unless @book.nil?
-      @comment = @book.comments.find(params[:id])
+      @comment = @book.comments.find_by(id: params[:id])
       @comment.destroy
     end
   end
