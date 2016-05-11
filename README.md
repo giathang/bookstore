@@ -7,3 +7,8 @@
     2. [Rails style guide]: https://github.com/bbatsov/rails-style-guide
     3. [REST API]: http://www.restapitutorial.com/
     4. [jbuilder]: https://github.com/rails/jbuilder
+
+### function 1: user scaffold create Book
+> rails g scaffold Book title:string des:text isbn:integer
+
+
