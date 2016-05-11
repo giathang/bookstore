@@ -184,7 +184,7 @@ models/book.rb
 
 ### Function 6: create API Author Controller and View
    1. Author Controller
-   
+
         class Api::V1::AuthorsController < ApplicationController
           before_action :find_author, only: [:show, :update, :destroy]
 
