@@ -220,7 +220,7 @@ models/book.rb
             @author= Author.find_by(id: params[:id])
           end
         end
-     2. author View
+   2. author View
         *create.json.jbuilder
             json.extract! @author, :name
          *destroy.json.jbuilder
