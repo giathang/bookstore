@@ -27,7 +27,9 @@ class Api::V1::BooksController < ApplicationController
 
   # DELETE/api/v1/books/:id
   def destroy
-    @book.destroy
+    unless @book.nil?
+      @book.destroy
+    end
   end
 
   private
