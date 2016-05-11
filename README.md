@@ -221,22 +221,30 @@ models/book.rb
           end
         end
    2. author View
-        *create.json.jbuilder
+
+        >create.json.jbuilder
+        
             json.extract! @author, :name
-         *destroy.json.jbuilder
+
+        >destroy.json.jbuilder
+
             if @author.nil?
               json.error "not found any author"
             else
               json.success "delete sucess"
             end
-        *index.json.jbuilder
+
+        >index.json.jbuilder
+
             json.authors @authors do |author|
               json.extract! author, :name
               json.books author.book do |book|
                   json.extract! book,:id,:title
               end
             end
-        *show.json.jbuilder
+
+        >show.json.jbuilder
+
             if @author.nil?
               json.error ("not found any author")
             else
@@ -247,7 +255,9 @@ models/book.rb
                 end
               end
             end
-        *update.json.jbuilder
+
+        >update.json.jbuilder
+
              if @author.nil?
                json.error ("not found any author")
              else
