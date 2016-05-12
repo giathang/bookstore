@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       end
       post 'auth_user' => 'authentication#authenticate_user'
       resources :authors
+      resources :categories
     end
   end
 end
