@@ -267,6 +267,7 @@ models/book.rb
 
 ### Function 7: after create API and use postman for test API
 
+### Fuction 8: Create function authenticate Login
 
 # Thanks you
 
