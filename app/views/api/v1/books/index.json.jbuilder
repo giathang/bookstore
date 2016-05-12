@@ -6,4 +6,5 @@ json.books @books do |book|
   json.authors book.authors do |author|
     json.extract! author, :name
   end
+  json.extract! book.category, :id, :category_name
 end
