@@ -24,7 +24,7 @@ class Api::V1::BooksController < ApplicationController
   def update
     unless @book.nil?
       @book.update(book_params)
-      end
+    end
   end
 
   # DELETE/api/v1/books/:id
