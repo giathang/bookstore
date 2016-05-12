@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+gem 'devise', '~> 4.1'
+gem 'jwt'
 gem 'responders'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
