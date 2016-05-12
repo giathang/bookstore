@@ -1,11 +1,9 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:show, :update, :destroy]
-  before_action :authenticate_request! , only: :index
 
   # GET /api/v1/books
   def index
     @books = Book.all
-    render json: {'logged_in' => true}
   end
 
   # GET /api/v1/books/:id
