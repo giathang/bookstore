@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :books do
         resources :comments
       end
+      post 'auth_user' => 'authentication#authenticate_user'
       resources :authors
     end
   end

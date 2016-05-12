@@ -5,7 +5,7 @@ class Api::V1::BooksController < ApplicationController
   # GET /api/v1/books
   def index
     @books = Book.all
-    render json: ('logged_in' => true)
+    render json: {'logged_in' => true}
   end
 
   # GET /api/v1/books/:id
