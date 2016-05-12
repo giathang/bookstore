@@ -5,7 +5,17 @@ class ApplicationController < ActionController::Base
 
   attr_reader :current_user
 
+  protected
 
+  # create authenticate request
+  def authenticate_request!
+    unless user_id_in_token?
+      render json: {errors: ['Not Authenticated']}, status: :unauthorized
+    end
+    @current_user = User.find(auth_token[:user_id])
+  rescue JWT::VerificationError, JWT::DecodeError
+    render json: {errors: ['Not Authenticated']}, status: :unauthorized
+  end
 
   private
 
